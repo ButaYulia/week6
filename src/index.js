@@ -93,13 +93,15 @@ function showWeather(response) {
   let feels_like = document.querySelector("#feels_like");
   let temperature = document.querySelector("#temperature");
   let icon = document.querySelector("#icon");
-  temperature.innerHTML = `${response.data.main.temp}`;
-  title.innerHTML = `It is currently ${response.data.main.feels_like}°F in ${response.data.name}`;
+  temperature.innerHTML = `${Math.round(response.data.main.temp)}`;
+  title.innerHTML = `It is currently ${Math.round(
+    response.data.main.feels_like
+  )}°F in ${response.data.name}`;
   city.innerHTML = ` ${response.data.name} `;
   description.innerHTML = `${response.data.weather[0].description}`;
   icon.src = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`;
-  temp_max.innerHTML = ` ${response.data.main.temp_max}`;
-  temp_min.innerHTML = ` ${response.data.main.temp_min}`;
+  temp_max.innerHTML = ` ${Math.round(response.data.main.temp_max)}`;
+  temp_min.innerHTML = ` ${Math.round(response.data.main.temp_min)}`;
   wind_speed.innerHTML = `${response.data.wind.speed}`;
   humidity.innerHTML = `${response.data.main.humidity}`;
   geoCoding();
@@ -129,50 +131,90 @@ function RenderSmork(response) {
   let day = ` <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Monday</h5>
-                                <i><span> Weather type: </span>${response.data.daily[0].condition.description},
-                                <span> day temperature </span> ${response.data.daily[0].temperature.day}°C,
-                                <span> humidity </span> ${response.data.daily[0].temperature.humidity}%,
-                                <span> wind speed </span> ${response.data.daily[0].wind.speed}m/s;</i>
+                                <i><span> Weather type: </span>${
+                                  response.data.daily[0].condition.description
+                                },
+                                <span> day temperature </span> ${Math.round(
+                                  response.data.daily[0].temperature.day
+                                )}°C,
+                                <span> humidity </span> ${
+                                  response.data.daily[0].temperature.humidity
+                                }%,
+                                <span> wind speed </span> ${
+                                  response.data.daily[0].wind.speed
+                                }m/s;</i>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Tuesday</h5>
-                                <i><span> Weather type: </span>${response.data.daily[1].condition.description},
-                                <span> day temperature </span> ${response.data.daily[1].temperature.day}°C,
-                                <span> humidity </span> ${response.data.daily[1].temperature.humidity}%,
-                                <span> wind speed </span> ${response.data.daily[1].wind.speed}m/s;</i>
+                                <i><span> Weather type: </span>${
+                                  response.data.daily[1].condition.description
+                                },
+                                <span> day temperature </span> ${Math.round(
+                                  response.data.daily[1].temperature.day
+                                )}°C,
+                                <span> humidity </span> ${
+                                  response.data.daily[1].temperature.humidity
+                                }%,
+                                <span> wind speed </span> ${
+                                  response.data.daily[1].wind.speed
+                                }m/s;</i>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Wednesday</h5>
-                                <i><span> Weather type: </span>${response.data.daily[2].condition.description},
-                                <span> day temperature </span> ${response.data.daily[2].temperature.day}°C,
-                                <span> humidity </span> ${response.data.daily[2].temperature.humidity}%,
-                                <span> wind speed </span> ${response.data.daily[2].wind.speed}m/s;</i>
+                                <i><span> Weather type: </span>${
+                                  response.data.daily[2].condition.description
+                                },
+                                <span> day temperature </span> ${Math.round(
+                                  response.data.daily[2].temperature.day
+                                )}°C,
+                                <span> humidity </span> ${
+                                  response.data.daily[2].temperature.humidity
+                                }%,
+                                <span> wind speed </span> ${
+                                  response.data.daily[2].wind.speed
+                                }m/s;</i>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Thursday</h5>
-                                <i><span> Weather type: </span>${response.data.daily[3].condition.description},
-                                <span> day temperature </span> ${response.data.daily[3].temperature.day}°C,
-                                <span> humidity </span> ${response.data.daily[3].temperature.humidity}%,
-                                <span> wind speed </span> ${response.data.daily[3].wind.speed}m/s;</i>
+                                <i><span> Weather type: </span>${
+                                  response.data.daily[3].condition.description
+                                },
+                                <span> day temperature </span> ${Math.round(
+                                  response.data.daily[3].temperature.day
+                                )}°C,
+                                <span> humidity </span> ${
+                                  response.data.daily[3].temperature.humidity
+                                }%,
+                                <span> wind speed </span> ${
+                                  response.data.daily[3].wind.speed
+                                }m/s;</i>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Friday</h5>
-                                <i><span> Weather type: </span>${response.data.daily[4].condition.description},
-                                <span> day temperature </span> ${response.data.daily[4].temperature.day}°C,
-                                <span> humidity </span> ${response.data.daily[4].temperature.humidity}%,
-                                <span> wind speed </span> ${response.data.daily[4].wind.speed}m/s;</i>
+                                <i><span> Weather type: </span>${
+                                  response.data.daily[4].condition.description
+                                },
+                                <span> day temperature </span> ${Math.round(
+                                  response.data.daily[4].temperature.day
+                                )}°C,
+                                <span> humidity </span> ${
+                                  response.data.daily[4].temperature.humidity
+                                }%,
+                                <span> wind speed </span> ${
+                                  response.data.daily[4].wind.speed
+                                }m/s;</i>
                             </div>
                         </div> `;
   document.getElementById("day").innerHTML = day;
